@@ -1,9 +1,9 @@
 import {Routes,Route} from 'react-router-dom';
-import Login from './Login';
+import Login from './component/Login';
 function Home() {
   return (
     <Routes>
-        <Route path='/login' element={<Login/>} />
+        <Route path='/' element={<Login/>} />
     </Routes>
 
 
