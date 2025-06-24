@@ -46,7 +46,9 @@ function Login() {
           <button type="submit" className="btn btn-primary w-100">
             Login
           </button>
+
         </form>
+        <a href="/regitor">Sign Up</a>
       </div>
     </div>
   );
