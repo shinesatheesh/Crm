@@ -5,6 +5,8 @@ let Registor =  ()=>{
     let [name,setname] = useState('');
     let [email,setemail] = useState('');
     let[age , setage] = useState('');
+    let [password , setpassword] = useState('');
+    let [confirm , setconfirm] = useState('');
     let handle = (e)=>{
         e.preventDefault();
         console.log(name,email);
@@ -51,6 +53,32 @@ let Registor =  ()=>{
                         id="age"
                         value={age}
                         onChange={(e) => setage(e.target.value)}
+                        required
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label htmlFor="password" className="form-label">
+                        Age
+                        </label>
+                        <input
+                        type="password"
+                        className="form-control"
+                        id="password"
+                        value={password}
+                        onChange={(e) => setpassword(e.target.value)}
+                        required
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label htmlFor="confirm" className="form-label">
+                        Age
+                        </label>
+                        <input
+                        type="password"
+                        className="form-control"
+                        id="confirm"
+                        value={confirm}
+                        onChange={(e) => setconfirm(e.target.value)}
                         required
                         />
                     </div>
