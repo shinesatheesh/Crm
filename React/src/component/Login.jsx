@@ -14,8 +14,7 @@ function Login() {
     <div className="container d-flex justify-content-center align-items-center vh-100">
       <div
         className="card p-4 shadow"
-        style={{ maxWidth: "400px", width: "100%" }}
-      >
+        style={{ maxWidth: "400px", width: "100%" }}>
         <h2 className="text-center mb-4">Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -25,6 +24,7 @@ function Login() {
             <input
               type="email"
               className="form-control"
+              placeholder="Enter email address"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -38,6 +38,7 @@ function Login() {
             <input
               type="password"
               className="form-control"
+              placeholder="Enter password"
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -49,7 +50,7 @@ function Login() {
           </button>
 
         </form>
-        <Link to="/registor">Sign Up</Link>
+        <Link align="center" to="/register">Sign Up</Link>
       </div>
     </div>
   );

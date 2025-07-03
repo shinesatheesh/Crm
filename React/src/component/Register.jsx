@@ -1,21 +1,34 @@
 import { useState } from "react";
+import axios from "axios";
 
+function Register (){
+    const [user,setUser] = useState({
+        name:"",
+        email:"",
+        age:"",
+        password:"",
+        confirm:"",
 
-let Registor =  ()=>{
-    let [name,setname] = useState('');
-    let [email,setemail] = useState('');
-    let[age , setage] = useState('');
-    let [password , setpassword] = useState('');
-    let [confirm , setconfirm] = useState('');
-    let handle = (e)=>{
-        e.preventDefault();
-        console.log(name,email);
+    });
+    const handleChange=(e)=>{
+        setUser({...user, [e.target.name]:e.target.value});
     }
+    const handleSubmit = async (e)=>{
+        e.preventDefault();
+        try{
+            await axios.post("http://localhost:8080/api/register",user);
+            alert("User registered successfully!");
+        }
+        catch(err){
+            console.error(err);
+            alert("error occured");
+        }
+    };
     
     return (
         <div className="container d-flex justify-content-center align-items-center vh-100">
             <div className="card p-4 w-50 shadow">
-                 <h2 className="text-center mb-4">Registor</h2>
+                 <h2 className="text-center mb-4">Register</h2>
                  <form onSubmit={handle}>
                     <div className="mb-4">
                         <label htmlFor="name" className="form-label">
@@ -58,7 +71,7 @@ let Registor =  ()=>{
                     </div>
                     <div className="mb-4">
                         <label htmlFor="password" className="form-label">
-                        Age
+                        Password
                         </label>
                         <input
                         type="password"
@@ -71,7 +84,7 @@ let Registor =  ()=>{
                     </div>
                     <div className="mb-4">
                         <label htmlFor="confirm" className="form-label">
-                        Age
+                        Confirm password
                         </label>
                         <input
                         type="password"
@@ -83,7 +96,7 @@ let Registor =  ()=>{
                         />
                     </div>
                     <button type="submit" className="btn btn-primary w-100">
-                        Regitor
+                        Regiter
                     </button>
                    
                  </form>
@@ -92,4 +105,4 @@ let Registor =  ()=>{
     );
 }
 
-export default Registor;
+export default Register;

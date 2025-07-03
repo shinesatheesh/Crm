@@ -1,11 +1,11 @@
 import {Routes,Route} from 'react-router-dom';
 import Login from './component/Login';
-import Registor from './component/Registor';
+import Register from './component/Register';
 function Home() {
   return (
     <Routes>
         <Route path='/' element={<Login/>} />
-        <Route path="/registor" element={<Registor/>}/>
+        <Route path="/register" element={<Register/>}/>
     </Routes>
 
 
