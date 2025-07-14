@@ -11,6 +11,7 @@ function Register (){
 
     });
     const handleChange=(e)=>{
+        console.log(e)
         setUser({...user, [e.target.name]:e.target.value});
     }
     const handleSubmit = async (e)=>{
@@ -29,7 +30,7 @@ function Register (){
         <div className="container d-flex justify-content-center align-items-center vh-100">
             <div className="card p-4 w-50 shadow">
                  <h2 className="text-center mb-4">Register</h2>
-                 <form onSubmit={handle}>
+                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <label htmlFor="name" className="form-label">
                         Name
@@ -38,8 +39,8 @@ function Register (){
                         type="name"
                         className="form-control"
                         id="name"
-                        value={name}
-                        onChange={(e) => setname(e.target.value)}
+                        value={user.name}
+                        onChange={(e) => handleChange(e.target.value)}
                         required
                         />
                     </div>
@@ -51,8 +52,8 @@ function Register (){
                         type="email"
                         className="form-control"
                         id="email"
-                        value={email}
-                        onChange={(e) => setemail(e.target.value)}
+                        value={user.email}
+                        onChange={(e) => handleChange(e.target.value)}
                         required
                         />
                     </div>
@@ -64,8 +65,8 @@ function Register (){
                         type="date"
                         className="form-control"
                         id="age"
-                        value={age}
-                        onChange={(e) => setage(e.target.value)}
+                        value={user.age}
+                        onChange={(e) => handleChange(e.target.value)}
                         required
                         />
                     </div>
@@ -77,8 +78,8 @@ function Register (){
                         type="password"
                         className="form-control"
                         id="password"
-                        value={password}
-                        onChange={(e) => setpassword(e.target.value)}
+                        value={user.password}
+                        onChange={(e) => handleChange(e.target.value)}
                         required
                         />
                     </div>
@@ -90,8 +91,8 @@ function Register (){
                         type="password"
                         className="form-control"
                         id="confirm"
-                        value={confirm}
-                        onChange={(e) => setconfirm(e.target.value)}
+                        value={user.confirm}
+                        onChange={(e) => handleChange(e.target.value)}
                         required
                         />
                     </div>
